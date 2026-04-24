@@ -1,1 +1,0 @@
-# oop-khpi-2-laba7

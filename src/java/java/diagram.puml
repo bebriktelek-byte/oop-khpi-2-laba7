@@ -1,0 +1,33 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface Printable {
+  + printDocument(): String
+}
+
+interface Archivable {
+  + archiveDocument(): String
+}
+
+class TranscriptRequest {
+  - studentId: String
+  + archiveDocument(): String
+}
+
+class InternshipLetter {
+  - companyName: String
+  + printDocument(): String
+}
+
+class EnrollmentCertificate {
+  - studentName: String
+  - term: String
+  + printDocument(): String
+  + archiveDocument(): String
+}
+
+TranscriptRequest ..|> Archivable
+InternshipLetter ..|> Printable
+EnrollmentCertificate ..|> Printable
+EnrollmentCertificate ..|> Archivable
+@enduml
